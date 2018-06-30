@@ -85,6 +85,7 @@ public class Animation2 : MonoBehaviour {
 		temp = keyboards[t].transform.position;
 		temp.y = temp.y - diff;
 		keyboards[t].transform.position = temp;
+		keyboards [t].GetComponent<Renderer> ().material.color = Color.yellow;
 		sources[t].PlayOneShot(soundEffects[t],volHigh);
 	}
 		
@@ -93,11 +94,13 @@ public class Animation2 : MonoBehaviour {
 		for (int i = 0; i < 7; i++) {
 			temp = keyboards[i].transform.position;
 			temp.y = WhiteHeight.y;
+			keyboards [i].GetComponent<Renderer> ().material.color = Color.white;
 			keyboards[i].transform.position = temp;
 		}
 		for (int i = 7; i < 12; i++) {
 			temp = keyboards[i].transform.position;
 			temp.y = BlackHeight.y;
+			keyboards [i].GetComponent<Renderer> ().material.color = Color.black;
 			keyboards[i].transform.position = temp;
 		}
 	}
